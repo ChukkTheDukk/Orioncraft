@@ -1,5 +1,7 @@
 package net.chukkthedukk.orioncraft;
 
+import net.chukkthedukk.orioncraft.item.ModItemGroups;
+import net.chukkthedukk.orioncraft.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -12,5 +14,7 @@ public class Orioncraft implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		ModItems.registerModItems();
+		ModItemGroups.registerItemGroups();
 	}
 }
