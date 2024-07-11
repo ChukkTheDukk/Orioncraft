@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "orioncraft",
+	"version": "${version}",
+	"name": "Orioncraft",
+	"description": "Hehe I love Kiki",
+	"authors": [
+		"Ryan"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/orioncraft/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.chukkthedukk.orioncraft.Orioncraft"
+		],
+		"client": [
+			"net.chukkthedukk.orioncraft.OrioncraftClient"
+		],
+		"fabric-datagen": [
+			"net.chukkthedukk.orioncraft.OrioncraftDataGenerator"
+		]
+	},
+	"mixins": [
+		"orioncraft.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
