@@ -2,5 +2,9 @@
   "item.orioncraft.raw_platinum": "Raw Platinum",
   "item.orioncraft.platinum_nugget": "Platinum Nugget",
   "item.orioncraft.platinum_ingot": "Platinum Ingot",
+  "block.orioncraft.platinum_ore": "Platinum Ore",
+  "block.orioncraft.deepslate_platinum_ore": "Deepslate Platinum Ore",
+  "block.orioncraft.raw_platinum_block": "Block of Raw Platinum",
+  "block.orioncraft.platinum_block": "Block of Platinum",
   "itemgroup.orion": "Orioncraft"
 }
