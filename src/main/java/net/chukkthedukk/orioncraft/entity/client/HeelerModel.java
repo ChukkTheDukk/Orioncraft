@@ -67,6 +67,7 @@ public class HeelerModel<T extends HeelerEntity> extends SinglePartEntityModel<T
 
 		this.animateMovement(ModAnimations.HEELER_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
 		this.updateAnimation(entity.idleAnimationState, ModAnimations.HEELER_IDLE, ageInTicks, 1f);
+		this.updateAnimation(entity.sittingAnimationState, ModAnimations.HEELER_SIT, ageInTicks, 1f);
 	}
 
 	@Override
