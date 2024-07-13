@@ -6,13 +6,13 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.Random;
 
 public class HeelerRenderer extends MobEntityRenderer<HeelerEntity, HeelerModel<HeelerEntity>> {
-    private final Identifier TEXTURE = new Identifier(Orioncraft.MOD_ID, "textures/entity/heeler_blue.png");
 
     public HeelerRenderer(EntityRendererFactory.Context context) {
         super(context, new HeelerModel<>(context.getPart(ModModelLayers.HEELER)), 0.6f);
@@ -20,7 +20,7 @@ public class HeelerRenderer extends MobEntityRenderer<HeelerEntity, HeelerModel<
 
     @Override
     public Identifier getTexture(HeelerEntity entity) {
-        return TEXTURE;
+        return new Identifier(Orioncraft.MOD_ID, "textures/entity/heeler_"+entity.getVariant().asString()+".png");
     }
 
     @Override

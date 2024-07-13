@@ -33,6 +33,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.IntFunction;
 
 public class HeelerEntity extends TameableEntity {
+    private static final TrackedData<Integer> VARIANT = DataTracker.registerData(HeelerEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<Boolean> SITTING =
             DataTracker.registerData(HeelerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
@@ -158,6 +159,7 @@ public class HeelerEntity extends TameableEntity {
     protected void initDataTracker() {
         super.initDataTracker();
         this.dataTracker.startTracking(SITTING, false);
+        this.dataTracker.startTracking(VARIANT, 1);
     }
 
     @Override
@@ -213,5 +215,77 @@ public class HeelerEntity extends TameableEntity {
     @Override
     public LivingEntity getOwner() {
         return super.getOwner();
+    }
+
+    @Nullable
+    @Override
+    public EntityData initialize(
+            ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt
+    ) {
+        this.setVariant(Util.getRandom(HeelerEntity.Variant.values(), world.getRandom()));
+        if (entityData == null) {
+            entityData = new PassiveEntity.PassiveData(false);
+        }
+
+        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
+    }
+
+    public HeelerEntity.Variant getVariant() {
+        return HeelerEntity.Variant.byIndex(this.dataTracker.get(VARIANT));
+    }
+
+    public void setVariant(HeelerEntity.Variant variant) {
+        this.dataTracker.set(VARIANT, variant.id);
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putInt("Variant", this.getVariant().id);
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        this.setVariant(HeelerEntity.Variant.byIndex(nbt.getInt("Variant")));
+    }
+
+    public enum Variant implements StringIdentifiable {
+        BLUE(0, "blue"),
+        BLUE1A(1, "blue1a"),
+        BLUE1B(2, "blue1b"),
+        BLUE2(3, "blue2"),
+        RED(4, "red"),
+        RED1A(5, "red1a"),
+        RED1B(6, "red1b"),
+        RED2(7, "red2"),
+        CHOCOLATE(8, "chocolate"),
+        CHOCOLATE1A(9, "chocolate1a"),
+        CHOCOLATE1B(10, "chocolate1b"),
+        CHOCOLATE2(11, "chocolate2");
+
+        private static final IntFunction<HeelerEntity.Variant> BY_ID = ValueLists.createIdToValueFunction(
+                HeelerEntity.Variant::getId, values(), ValueLists.OutOfBoundsHandling.CLAMP
+        );
+        final int id;
+        private final String name;
+
+        Variant(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        public int getId() {
+            return this.id;
+        }
+
+        public static HeelerEntity.Variant byIndex(int index) {
+            return BY_ID.apply(index);
+        }
+
+        @Override
+        public String asString() {
+            return this.name;
+        }
     }
 }
