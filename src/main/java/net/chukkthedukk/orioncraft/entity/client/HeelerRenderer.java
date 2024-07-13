@@ -9,8 +9,10 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.util.Identifier;
 
+import java.util.Random;
+
 public class HeelerRenderer extends MobEntityRenderer<HeelerEntity, HeelerModel<HeelerEntity>> {
-    private static final Identifier TEXTURE = new Identifier(Orioncraft.MOD_ID, "textures/entity/heeler_blue.png");
+    private final Identifier TEXTURE = new Identifier(Orioncraft.MOD_ID, "textures/entity/heeler_blue.png");
 
     public HeelerRenderer(EntityRendererFactory.Context context) {
         super(context, new HeelerModel<>(context.getPart(ModModelLayers.HEELER)), 0.6f);

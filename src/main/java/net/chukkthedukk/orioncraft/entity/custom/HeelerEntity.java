@@ -16,18 +16,23 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.util.*;
+import net.minecraft.util.function.ValueLists;
 import net.minecraft.world.EntityView;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class HeelerEntity extends TameableEntity {
+import java.util.function.IntFunction;
 
+public class HeelerEntity extends TameableEntity {
     private static final TrackedData<Boolean> SITTING =
             DataTracker.registerData(HeelerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
@@ -71,7 +76,7 @@ public class HeelerEntity extends TameableEntity {
                 if (!player.getAbilities().creativeMode) {
                     itemStack.decrement(1);
                 }
-                this.heal((float)item.getFoodComponent().getHunger());
+                this.heal((float) item.getFoodComponent().getHunger());
                 return ActionResult.SUCCESS;
             } else {
                 ActionResult actionResult = super.interactMob(player, hand);
@@ -114,7 +119,7 @@ public class HeelerEntity extends TameableEntity {
     @Override
     public void tick() {
         super.tick();
-        if(this.getWorld().isClient()) {
+        if (this.getWorld().isClient()) {
             setupAnimationStates();
         }
     }
