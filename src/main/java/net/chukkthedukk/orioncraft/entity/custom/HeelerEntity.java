@@ -126,7 +126,7 @@ public class HeelerEntity extends TameableEntity {
         this.goalSelector.add(2, new SitGoal(this));
         this.goalSelector.add(3, new TemptGoal(this, 2D, Ingredient.ofItems(Items.BONE), false));
         this.goalSelector.add(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F, false));
-        this.goalSelector.add(7, new AnimalMateGoal(this, 1.0));
+        this.goalSelector.add(3, new AnimalMateGoal(this, 1.5D));
         this.goalSelector.add(8, new WanderAroundFarGoal(this, 1.0));
         this.goalSelector.add(10, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(10, new LookAroundGoal(this));
@@ -151,8 +151,8 @@ public class HeelerEntity extends TameableEntity {
 
     @Override
     protected void initDataTracker() {
-        this.dataTracker.set(SITTING, false);
         super.initDataTracker();
+        this.dataTracker.startTracking(SITTING, false);
     }
 
     @Override
