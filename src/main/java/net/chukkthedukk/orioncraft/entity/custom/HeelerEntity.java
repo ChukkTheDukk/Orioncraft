@@ -48,7 +48,7 @@ public class HeelerEntity extends TameableEntity {
         } else {
             --this.idleAnimationTimeout;
         }
-        if (this.isSitting() && sittingAnimationTimeout <= 0) {
+        if (this.isSitting()) {
             sittingAnimationTimeout = 40;
             sittingAnimationState.start(this.age);
         } else {
@@ -152,6 +152,7 @@ public class HeelerEntity extends TameableEntity {
     @Override
     protected void initDataTracker() {
         this.dataTracker.set(SITTING, false);
+        super.initDataTracker();
     }
 
     @Override
