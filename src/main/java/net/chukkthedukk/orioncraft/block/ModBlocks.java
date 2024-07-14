@@ -25,6 +25,7 @@ public class ModBlocks {
     public static final Block PLATINUM_BLOCK = registerBlock("platinum_block",
             new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
 
+    public static final Block MJ_DEFAULT = registerBlock("mj_default", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).nonOpaque()));
     public static final Block MJ_EAST = registerBlock("mj_east", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).nonOpaque()));
 
     private static Block registerBlock(String name, Block block) {

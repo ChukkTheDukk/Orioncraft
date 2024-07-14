@@ -13,6 +13,15 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
 
+    public static final ItemGroup MJ_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(Orioncraft.MOD_ID, "mj"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.mj"))
+                    .icon(() -> new ItemStack(ModBlocks.MJ_EAST)).entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.MJ_EAST);
+
+                        entries.add(ModBlocks.MJ_DEFAULT);
+                    }).build());
+
     public static final ItemGroup ORION_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Orioncraft.MOD_ID, "orion"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.orion"))
@@ -25,7 +34,6 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RAW_PLATINUM_BLOCK);
                         entries.add(ModBlocks.PLATINUM_BLOCK);
                         entries.add(ModItems.HEELER_SPAWN_EGG);
-                        entries.add(ModBlocks.MJ_EAST);
                     }).build());
 
     public static void registerItemGroups() {
