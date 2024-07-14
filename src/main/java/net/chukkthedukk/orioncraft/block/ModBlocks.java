@@ -1,10 +1,12 @@
 package net.chukkthedukk.orioncraft.block;
 
 import net.chukkthedukk.orioncraft.Orioncraft;
+import net.chukkthedukk.orioncraft.block.custom.MahjongBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -22,6 +24,8 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.RAW_GOLD_BLOCK)));
     public static final Block PLATINUM_BLOCK = registerBlock("platinum_block",
             new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
+
+    public static final Block MJ_EAST = registerBlock("mj_east", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).nonOpaque()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

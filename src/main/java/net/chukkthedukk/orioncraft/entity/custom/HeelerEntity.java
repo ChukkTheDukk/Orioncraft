@@ -74,7 +74,6 @@ public class HeelerEntity extends TameableEntity {
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         ItemStack itemStack = player.getStackInHand(hand);
         Item item = itemStack.getItem();
-        Orioncraft.LOGGER.info("Variant: " + this.getVariant().asString());
         if (this.getWorld().isClient) {
             boolean bl = this.isOwner(player) || this.isTamed() || itemStack.isOf(Items.BONE) && !this.isTamed();
             return bl ? ActionResult.CONSUME : ActionResult.PASS;

@@ -25,6 +25,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RAW_PLATINUM_BLOCK);
                         entries.add(ModBlocks.PLATINUM_BLOCK);
                         entries.add(ModItems.HEELER_SPAWN_EGG);
+                        entries.add(ModBlocks.MJ_EAST);
                     }).build());
 
     public static void registerItemGroups() {
