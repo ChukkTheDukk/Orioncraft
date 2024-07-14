@@ -25,6 +25,13 @@ public class ModBlocks {
     public static final Block PLATINUM_BLOCK = registerBlock("platinum_block",
             new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
 
+    public static final Block JADE_ORE = registerBlock("jade_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.LAPIS_ORE)));
+    public static final Block DEEPSLATE_JADE_ORE = registerBlock("deepslate_jade_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_LAPIS_ORE)));
+    public static final Block JADE_BLOCK = registerBlock("jade_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.LAPIS_BLOCK)));
+
     public static final Block MJ_DEFAULT = registerBlock("mj_default", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).nonOpaque()));
     public static final Block MJ_EAST = registerBlock("mj_east", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).nonOpaque()));
 

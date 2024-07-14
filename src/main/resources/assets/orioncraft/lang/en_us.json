@@ -3,11 +3,15 @@
   "item.orioncraft.platinum_nugget": "Platinum Nugget",
   "item.orioncraft.platinum_ingot": "Platinum Ingot",
   "item.orioncraft.heeler_spawn_egg": "Heeler Spawn Egg",
+  "item.orioncraft.jade": "Jade",
   "block.orioncraft.platinum_ore": "Platinum Ore",
   "block.orioncraft.deepslate_platinum_ore": "Deepslate Platinum Ore",
   "block.orioncraft.raw_platinum_block": "Block of Raw Platinum",
   "block.orioncraft.platinum_block": "Block of Platinum",
-
+  "block.orioncraft.jade_ore": "Jade Ore",
+  "block.orioncraft.deepslate_jade_ore": "Deepslate Jade Ore",
+  "block.orioncraft.jade_block": "Block of Jade",
+  
   "block.orioncraft.mj_default": "Mahjong Tile - Empty",
   "block.orioncraft.mj_east": "Mahjong Tile - East Wind",
 

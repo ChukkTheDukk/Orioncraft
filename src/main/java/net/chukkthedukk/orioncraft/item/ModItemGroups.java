@@ -34,6 +34,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RAW_PLATINUM_BLOCK);
                         entries.add(ModBlocks.PLATINUM_BLOCK);
                         entries.add(ModItems.HEELER_SPAWN_EGG);
+                        entries.add(ModItems.JADE);
+                        entries.add(ModBlocks.JADE_ORE);
+                        entries.add(ModBlocks.DEEPSLATE_JADE_ORE);
+                        entries.add(ModBlocks.JADE_BLOCK);
                     }).build());
 
     public static void registerItemGroups() {

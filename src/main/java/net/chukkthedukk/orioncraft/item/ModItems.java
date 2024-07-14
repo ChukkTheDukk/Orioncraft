@@ -19,6 +19,8 @@ public class ModItems {
     public static final Item PLATINUM_INGOT = registerItem("platinum_ingot", new Item(new FabricItemSettings()));
     public static final Item HEELER_SPAWN_EGG = registerItem("heeler_spawn_egg", new SpawnEggItem(ModEntities.HEELER, 0x6e6e6e, 0xCC6920, new FabricItemSettings()));
 
+    public static final Item JADE = registerItem("jade", new Item(new FabricItemSettings()));
+
     private static void addItemstoIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RAW_PLATINUM);
         entries.add(PLATINUM_NUGGET);
