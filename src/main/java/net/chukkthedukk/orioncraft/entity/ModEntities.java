@@ -14,7 +14,7 @@ public class ModEntities {
     public static final EntityType<HeelerEntity> HEELER = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(Orioncraft.MOD_ID, "heeler"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, HeelerEntity::new)
-                    .dimensions(EntityDimensions.fixed(1f, 1f)).build());
+                    .dimensions(EntityDimensions.fixed(0.8f, 1f)).build());
 
     public static void registerModEntities() {
         Orioncraft.LOGGER.info("Registering Entities for Orioncraft");

@@ -5,6 +5,7 @@ import net.chukkthedukk.orioncraft.entity.ModEntities;
 import net.chukkthedukk.orioncraft.entity.custom.HeelerEntity;
 import net.chukkthedukk.orioncraft.item.ModItemGroups;
 import net.chukkthedukk.orioncraft.item.ModItems;
+import net.chukkthedukk.orioncraft.world.gen.ModWorldGen;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -21,6 +22,7 @@ public class Orioncraft implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
+		ModWorldGen.generateWorldGen();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.HEELER, HeelerEntity.createHeelerAttributes());
 	}

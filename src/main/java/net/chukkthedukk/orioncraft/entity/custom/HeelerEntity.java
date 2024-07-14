@@ -1,5 +1,6 @@
 package net.chukkthedukk.orioncraft.entity.custom;
 
+import net.chukkthedukk.orioncraft.Orioncraft;
 import net.chukkthedukk.orioncraft.entity.ModEntities;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
@@ -12,24 +13,24 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.*;
 import net.minecraft.util.function.ValueLists;
-import net.minecraft.world.EntityView;
-import net.minecraft.world.LocalDifficulty;
-import net.minecraft.world.ServerWorldAccess;
-import net.minecraft.world.World;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Random;
 import java.util.function.IntFunction;
 
 public class HeelerEntity extends TameableEntity {
@@ -45,6 +46,10 @@ public class HeelerEntity extends TameableEntity {
 
     public HeelerEntity(EntityType<? extends TameableEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    public static boolean canSpawn(WorldAccess world, BlockPos pos) {
+        return world.getBlockState(pos.down()).isIn(BlockTags.WOLVES_SPAWNABLE_ON) && isLightLevelValidForNaturalSpawn(world, pos);
     }
 
     private void setupAnimationStates() {
@@ -69,6 +74,7 @@ public class HeelerEntity extends TameableEntity {
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         ItemStack itemStack = player.getStackInHand(hand);
         Item item = itemStack.getItem();
+        Orioncraft.LOGGER.info("Variant: " + this.getVariant().asString());
         if (this.getWorld().isClient) {
             boolean bl = this.isOwner(player) || this.isTamed() || itemStack.isOf(Items.BONE) && !this.isTamed();
             return bl ? ActionResult.CONSUME : ActionResult.PASS;
@@ -158,8 +164,9 @@ public class HeelerEntity extends TameableEntity {
     @Override
     protected void initDataTracker() {
         super.initDataTracker();
+        Random random = new Random();
         this.dataTracker.startTracking(SITTING, false);
-        this.dataTracker.startTracking(VARIANT, 1);
+        this.dataTracker.startTracking(VARIANT, (random.nextInt(0,12)));
     }
 
     @Override
@@ -205,6 +212,14 @@ public class HeelerEntity extends TameableEntity {
         return super.isOwner(entity);
     }
 
+    @Override
+    public void growUp(int age) {
+        super.growUp(age);
+    }
+
+    public static boolean canSpawn(EntityType<WolfEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, net.minecraft.util.math.random.Random random) {
+        return world.getBlockState(pos.down()).isIn(BlockTags.WOLVES_SPAWNABLE_ON) && isLightLevelValidForNaturalSpawn(world, pos);
+    }
 
     @Override
     public EntityView method_48926() {
