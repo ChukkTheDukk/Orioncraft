@@ -13,22 +13,23 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
 
     public static final Block PLATINUM_ORE = registerBlock("platinum_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.GOLD_ORE)));
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f), UniformIntProvider.create(3, 8)));
     public static final Block DEEPSLATE_PLATINUM_ORE = registerBlock("deepslate_platinum_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_GOLD_ORE)));
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(3.5f), UniformIntProvider.create(3, 8)));
     public static final Block RAW_PLATINUM_BLOCK = registerBlock("raw_platinum_block",
             new Block(FabricBlockSettings.copyOf(Blocks.RAW_GOLD_BLOCK)));
     public static final Block PLATINUM_BLOCK = registerBlock("platinum_block",
             new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
 
     public static final Block JADE_ORE = registerBlock("jade_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.LAPIS_ORE)));
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f), UniformIntProvider.create(2, 5)));
     public static final Block DEEPSLATE_JADE_ORE = registerBlock("deepslate_jade_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_LAPIS_ORE)));
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(3.5f), UniformIntProvider.create(2, 5)));
     public static final Block JADE_BLOCK = registerBlock("jade_block",
             new Block(FabricBlockSettings.copyOf(Blocks.LAPIS_BLOCK)));
 
