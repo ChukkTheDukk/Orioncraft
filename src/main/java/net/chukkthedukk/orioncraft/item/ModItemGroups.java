@@ -17,9 +17,15 @@ public class ModItemGroups {
             new Identifier(Orioncraft.MOD_ID, "mj"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.mj"))
                     .icon(() -> new ItemStack(ModBlocks.MJ_EAST)).entries((displayContext, entries) -> {
-                        entries.add(ModBlocks.MJ_EAST);
+                        entries.add(ModBlocks.MAHJONG_WORKBENCH);
+
+                        entries.add(ModItems.JADE);
+                        entries.add(ModBlocks.JADE_ORE);
+                        entries.add(ModBlocks.DEEPSLATE_JADE_ORE);
+                        entries.add(ModBlocks.JADE_BLOCK);
 
                         entries.add(ModBlocks.MJ_DEFAULT);
+                        entries.add(ModBlocks.MJ_EAST);
                     }).build());
 
     public static final ItemGroup ORION_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -34,10 +40,6 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RAW_PLATINUM_BLOCK);
                         entries.add(ModBlocks.PLATINUM_BLOCK);
                         entries.add(ModItems.HEELER_SPAWN_EGG);
-                        entries.add(ModItems.JADE);
-                        entries.add(ModBlocks.JADE_ORE);
-                        entries.add(ModBlocks.DEEPSLATE_JADE_ORE);
-                        entries.add(ModBlocks.JADE_BLOCK);
                     }).build());
 
     public static void registerItemGroups() {

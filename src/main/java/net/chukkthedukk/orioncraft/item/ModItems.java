@@ -1,10 +1,12 @@
 package net.chukkthedukk.orioncraft.item;
 
 import net.chukkthedukk.orioncraft.Orioncraft;
+import net.chukkthedukk.orioncraft.block.ModBlocks;
 import net.chukkthedukk.orioncraft.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SpawnEggItem;

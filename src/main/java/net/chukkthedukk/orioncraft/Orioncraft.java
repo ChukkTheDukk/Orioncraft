@@ -23,6 +23,7 @@ public class Orioncraft implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModWorldGen.generateWorldGen();
+		//ModBlockEntities.registerBlockEntities();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.HEELER, HeelerEntity.createHeelerAttributes());
 	}

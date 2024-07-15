@@ -2,6 +2,7 @@ package net.chukkthedukk.orioncraft.block;
 
 import net.chukkthedukk.orioncraft.Orioncraft;
 import net.chukkthedukk.orioncraft.block.custom.MahjongBlock;
+import net.chukkthedukk.orioncraft.block.custom.MahjongWorkbenchBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -12,6 +13,9 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
@@ -33,8 +37,11 @@ public class ModBlocks {
     public static final Block JADE_BLOCK = registerBlock("jade_block",
             new Block(FabricBlockSettings.copyOf(Blocks.LAPIS_BLOCK)));
 
-    public static final Block MJ_DEFAULT = registerBlock("mj_default", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).nonOpaque()));
-    public static final Block MJ_EAST = registerBlock("mj_east", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.DIORITE).nonOpaque()));
+    public static final Block MAHJONG_WORKBENCH = registerBlock("mahjong_workbench",
+            new MahjongWorkbenchBlock(FabricBlockSettings.copyOf(Blocks.COBBLED_DEEPSLATE).nonOpaque().notSolid()));
+
+    public static final Block MJ_DEFAULT = registerBlock("mj_default", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.TNT).nonOpaque().sounds(BlockSoundGroup.STONE)));
+    public static final Block MJ_EAST = registerBlock("mj_east", new MahjongBlock(FabricBlockSettings.copyOf(Blocks.TNT).nonOpaque().sounds(BlockSoundGroup.STONE)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

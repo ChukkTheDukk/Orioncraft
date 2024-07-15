@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "J": {
+      "item": "orioncraft:jade"
+    },
+    "Q": {
+      "item": "minecraft:quartz"
+    }
+  },
+  "pattern": [
+    "JQ",
+    "JQ"
+  ],
+  "result": {
+    "item": "orioncraft:mj_default"
+  },
+  "show_notification": true
+}

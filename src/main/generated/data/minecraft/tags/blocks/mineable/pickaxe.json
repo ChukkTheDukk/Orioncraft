@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "orioncraft:platinum_ore",
+    "orioncraft:deepslate_platinum_ore",
+    "orioncraft:raw_platinum_block",
+    "orioncraft:platinum_block",
+    "orioncraft:jade_ore",
+    "orioncraft:deepslate_jade_ore",
+    "orioncraft:jade_block"
+  ]
+}

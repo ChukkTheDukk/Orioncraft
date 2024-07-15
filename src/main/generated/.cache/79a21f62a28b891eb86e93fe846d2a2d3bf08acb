@@ -1,0 +1,5 @@
+// 1.20.1	2024-07-15T01:23:14.3737404	Orioncraft/Tags for minecraft:block
+8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_4.json
+fedff49441f3fbe2c64053b95694b3d5d6e0841d data\minecraft\tags\blocks\needs_diamond_tool.json
+b18a7b0690fcb3da07eb16fdbf900cd02b9714f0 data\minecraft\tags\blocks\mineable\pickaxe.json
+c8f1157ab0f2d4f39e5ecf38f1e4734f66c1a355 data\minecraft\tags\blocks\needs_iron_tool.json

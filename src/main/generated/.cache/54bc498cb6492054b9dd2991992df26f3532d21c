@@ -1,0 +1,10 @@
+// 1.20.1	2024-07-15T01:23:14.3759565	Orioncraft/Block Loot Tables
+5b61e24e731ca718e045dc49a99062a23de0c033 data\orioncraft\loot_tables\blocks\jade_block.json
+278dc4820cdf53a8f39ce7fca15ff3ead325488b data\orioncraft\loot_tables\blocks\jade_ore.json
+0f84362ac0779375dc772cf281fb2577ed444605 data\orioncraft\loot_tables\blocks\platinum_block.json
+ba6cf0e9c480a96195ad09136d60c0653a02750b data\orioncraft\loot_tables\blocks\platinum_ore.json
+6106a158b07aafa8bd008b7664920a7c2c255445 data\orioncraft\loot_tables\blocks\mj_default.json
+4a16413aee0a07991e93dbbbd15cef146204a2cc data\orioncraft\loot_tables\blocks\mj_east.json
+9a6cd30aaa11363bd05b289827949782ee04e6f6 data\orioncraft\loot_tables\blocks\deepslate_jade_ore.json
+2bcb5c21844082477a4bf70f70c71a0b4680f41e data\orioncraft\loot_tables\blocks\raw_platinum_block.json
+e50b207033de3d2e7c4978801368ffff0d8333e8 data\orioncraft\loot_tables\blocks\deepslate_platinum_ore.json
