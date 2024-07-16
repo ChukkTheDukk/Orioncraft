@@ -1,7 +1,10 @@
 package net.chukkthedukk.orioncraft.block.custom;
 
+import com.mojang.brigadier.Command;
+import net.chukkthedukk.orioncraft.Orioncraft;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandlerContext;
@@ -10,6 +13,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -33,17 +37,18 @@ public class MahjongWorkbenchBlock extends Block {
         return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
-    /*@Override
+    @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = ((MahjongWorkbenchBlockEntity) world.getBlockEntity(pos));
+            //NamedScreenHandlerFactory screenHandlerFactory = ((MahjongWorkbenchBlockEntity) world.getBlockEntity(pos));
 
-            if (screenHandlerFactory != null) {
-                player.openHandledScreen(screenHandlerFactory);
-            }
+            //if (screenHandlerFactory != null) {
+                //player.openHandledScreen(screenHandlerFactory);
+            //}
         }
+        Orioncraft.LOGGER.info("used mahjong workbench");
         return ActionResult.SUCCESS;
-    }*/
+    }
 
     /*@Nullable
     @Override
